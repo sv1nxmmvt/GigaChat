@@ -4,6 +4,7 @@ using GigaChat.Server.Services;
 using GigaChat.Server.DTOs;
 using Microsoft.AspNetCore.SignalR;
 using GigaChat.Server.Hubs;
+using System.ComponentModel.DataAnnotations;
 
 namespace GigaChat.Server.Controllers
 {
@@ -317,27 +318,40 @@ namespace GigaChat.Server.Controllers
             _fileService = fileService;
         }
 
-        [HttpPost("upload")]
-        public async Task<IActionResult> Upload([FromForm] IFormFile file)
+        private Guid? CurrentUserId
         {
-            var sub = User.FindFirst("sub")?.Value;
-            if (sub == null)
-                return Unauthorized();
-            var userId = Guid.Parse(sub);
+            get
+            {
+                var sub = User.FindFirst("sub")?.Value;
+                return sub != null ? Guid.Parse(sub) : (Guid?)null;
+            }
+        }
 
-            var attachment = await _fileService.UploadFileAsync(file, userId);
+        public class UploadFileDto
+        {
+            [Required]
+            public IFormFile File { get; set; }
+        }
+
+        [HttpPost("upload")]
+        public async Task<IActionResult> Upload([FromForm] UploadFileDto dto)
+        {
+            var userId = CurrentUserId;
+            if (userId == null)
+                return Unauthorized();
+
+            var attachment = await _fileService.UploadFileAsync(dto.File, userId.Value);
             return Ok(attachment);
         }
 
         [HttpGet("{attachmentId}")]
         public async Task<IActionResult> Get(Guid attachmentId)
         {
-            var sub = User.FindFirst("sub")?.Value;
-            if (sub == null)
+            var userId = CurrentUserId;
+            if (userId == null)
                 return Unauthorized();
-            var userId = Guid.Parse(sub);
 
-            var stream = await _fileService.GetFileAsync(attachmentId, userId);
+            var stream = await _fileService.GetFileAsync(attachmentId, userId.Value);
             if (stream == null)
                 return Forbid();
 
@@ -347,12 +361,11 @@ namespace GigaChat.Server.Controllers
         [HttpDelete("{attachmentId}")]
         public async Task<IActionResult> Delete(Guid attachmentId)
         {
-            var sub = User.FindFirst("sub")?.Value;
-            if (sub == null)
+            var userId = CurrentUserId;
+            if (userId == null)
                 return Unauthorized();
-            var userId = Guid.Parse(sub);
 
-            var success = await _fileService.DeleteFileAsync(attachmentId, userId);
+            var success = await _fileService.DeleteFileAsync(attachmentId, userId.Value);
             if (!success)
                 return Forbid();
 
