@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GigaChat.Client.Web.Client\GigaChat.Client.Web.Client.csproj" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.4" />
   </ItemGroup>
 
 </Project>
