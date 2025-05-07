@@ -5,6 +5,14 @@ VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigaChat.Server", "GigaChat.Server\GigaChat.Server.csproj", "{DBF111CD-1560-4CA3-B27E-E47924DAA91E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigaChat.Client", "GigaChat.Client\GigaChat.Client\GigaChat.Client.csproj", "{6425D018-C5EC-4EDE-A5B1-55029DAEF55D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigaChat.Client.Shared", "GigaChat.Client\GigaChat.Client.Shared\GigaChat.Client.Shared.csproj", "{9173E573-E2C8-4ACE-AA93-7C9D5881C8D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigaChat.Client.Web", "GigaChat.Client\GigaChat.Client.Web\GigaChat.Client.Web.csproj", "{DD5DFA62-629D-4BC3-8856-81550D565F7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigaChat.Client.Web.Client", "GigaChat.Client\GigaChat.Client.Web.Client\GigaChat.Client.Web.Client.csproj", "{AA9B042E-8F3E-4E16-B4B8-6C12AF02CEA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{DBF111CD-1560-4CA3-B27E-E47924DAA91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBF111CD-1560-4CA3-B27E-E47924DAA91E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBF111CD-1560-4CA3-B27E-E47924DAA91E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6425D018-C5EC-4EDE-A5B1-55029DAEF55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6425D018-C5EC-4EDE-A5B1-55029DAEF55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6425D018-C5EC-4EDE-A5B1-55029DAEF55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6425D018-C5EC-4EDE-A5B1-55029DAEF55D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9173E573-E2C8-4ACE-AA93-7C9D5881C8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9173E573-E2C8-4ACE-AA93-7C9D5881C8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9173E573-E2C8-4ACE-AA93-7C9D5881C8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9173E573-E2C8-4ACE-AA93-7C9D5881C8D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD5DFA62-629D-4BC3-8856-81550D565F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD5DFA62-629D-4BC3-8856-81550D565F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD5DFA62-629D-4BC3-8856-81550D565F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD5DFA62-629D-4BC3-8856-81550D565F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9B042E-8F3E-4E16-B4B8-6C12AF02CEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9B042E-8F3E-4E16-B4B8-6C12AF02CEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9B042E-8F3E-4E16-B4B8-6C12AF02CEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9B042E-8F3E-4E16-B4B8-6C12AF02CEA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
